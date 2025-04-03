@@ -94,7 +94,7 @@ const Help = () => {
       questions: [
         {
           question: 'How do I apply for disaster assistance?',
-          answer: 'You can apply for disaster assistance through our Recovery page, which links to various aid programs. You'll need to provide documentation about your identity, residence, and disaster-related damages. Our app provides guidance for each step of the application process.'
+          answer: "You can apply for disaster assistance through our Recovery page, which links to various aid programs. You'll need to provide documentation about your identity, residence, and disaster-related damages. Our app provides guidance for each step of the application process."
         },
         {
           question: 'What documents should I have ready for insurance claims?',
@@ -119,7 +119,7 @@ const Help = () => {
         },
         {
           question: 'How do I reset my password?',
-          answer: 'To reset your password, click on "Forgot Password" on the login page. Enter your email address, and we'll send you a link to create a new password. For security reasons, password reset links expire after 24 hours.'
+          answer: "To reset your password, click on 'Forgot Password' on the login page. Enter your email address, and we'll send you a link to create a new password. For security reasons, password reset links expire after 24 hours."
         },
       ]
     },

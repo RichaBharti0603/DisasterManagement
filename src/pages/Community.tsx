@@ -107,7 +107,7 @@ const Community = () => {
       author: 'Jessica Martinez',
       authorRole: 'Animal Rescue Coordinator',
       date: '2023-09-14',
-      content: 'Many people don't know where they can bring their pets during evacuations. Here's a list of pet-friendly shelters in our area...',
+      content: "Many people don't know where they can bring their pets during evacuations. Here's a list of pet-friendly shelters in our area...",
       replies: 30,
       likes: 56,
       avatar: 'jessica-martinez.jpg',
