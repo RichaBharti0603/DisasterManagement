@@ -109,11 +109,10 @@ const Index = () => {
           <div className="relative p-8 md:p-16 text-white">
             <div className="flex items-center mb-6">
               <AlertTriangle className="h-10 w-10 mr-4" />
-              <h1 className="text-3xl md:text-4xl font-bold">DisasterHaven Connect</h1>
+              <h1 className="text-3xl md:text-4xl font-bold">NamasteNow</h1>
             </div>
             <p className="text-lg md:text-xl mb-6 max-w-2xl">
-              Your comprehensive disaster management platform for emergency preparation, 
-              response, and recovery. Stay safe and informed during critical situations.
+            Your safe space in times of crisis—real-time alerts, quick response tools, and trusted recovery support. Stay prepared, stay protected, stay home
             </p>
             <div className="flex flex-wrap gap-4">
               <Button 
@@ -126,7 +125,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-white text-white hover:bg-white/20"
+                className="bg-white text-primary hover:bg-white/90"
                 onClick={() => navigate('/login')}
               >
                 Sign Up

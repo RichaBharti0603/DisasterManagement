@@ -225,35 +225,35 @@ const Donation = () => {
                           variant={donationAmount === '10' ? "default" : "outline"}
                           onClick={() => handleAmountSelect('10')}
                         >
-                          $10
+                          &#8377;10
                         </Button>
                         <Button
                           type="button"
                           variant={donationAmount === '25' ? "default" : "outline"}
                           onClick={() => handleAmountSelect('25')}
                         >
-                          $25
+                          &#8377;25
                         </Button>
                         <Button
                           type="button"
                           variant={donationAmount === '50' ? "default" : "outline"}
                           onClick={() => handleAmountSelect('50')}
                         >
-                          $50
+                          &#8377;50
                         </Button>
                         <Button
                           type="button"
                           variant={donationAmount === '100' ? "default" : "outline"}
                           onClick={() => handleAmountSelect('100')}
                         >
-                          $100
+                          &#8377;100
                         </Button>
                         <Button
                           type="button"
                           variant={donationAmount === '250' ? "default" : "outline"}
                           onClick={() => handleAmountSelect('250')}
                         >
-                          $250
+                          &#8377;250
                         </Button>
                         <Button
                           type="button"
@@ -341,7 +341,7 @@ const Donation = () => {
                       <Input
                         id="phone"
                         type="tel"
-                        placeholder="(123) 456-7890"
+                        placeholder="9891181040"
                         value={phoneNumber}
                         onChange={(e) => setPhoneNumber(e.target.value)}
                       />
@@ -536,13 +536,13 @@ const Donation = () => {
                         <CardContent className="p-4">
                           <h4 className="font-medium mb-2">Central Relief Center</h4>
                           <p className="text-sm text-muted-foreground mb-2">
-                            123 Main St, Lincoln, NE 68508
+                            Abc Corporate Office, Kolkata
                           </p>
                           <p className="text-sm mb-2">
                             <span className="font-medium">Hours:</span> 9am-5pm, Mon-Sat
                           </p>
                           <p className="text-sm">
-                            <span className="font-medium">Phone:</span> (402) 555-1234
+                            <span className="font-medium">Phone:</span> 9891580834
                           </p>
                         </CardContent>
                       </Card>
@@ -550,13 +550,13 @@ const Donation = () => {
                         <CardContent className="p-4">
                           <h4 className="font-medium mb-2">Eastside Community Hub</h4>
                           <p className="text-sm text-muted-foreground mb-2">
-                            456 Oak Ave, Lincoln, NE 68510
+                            XYZ- Street, New Delhi-20
                           </p>
                           <p className="text-sm mb-2">
                             <span className="font-medium">Hours:</span> 10am-7pm, Mon-Fri
                           </p>
                           <p className="text-sm">
-                            <span className="font-medium">Phone:</span> (402) 555-5678
+                            <span className="font-medium">Phone:</span> 9891580834
                           </p>
                         </CardContent>
                       </Card>
@@ -579,7 +579,7 @@ const Donation = () => {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="space-y-2">
                           <Label htmlFor="phone">Phone Number</Label>
-                          <Input id="phone" placeholder="(123) 456-7890" />
+                          <Input id="phone" placeholder="9891580834" />
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="date">Pickup Date</Label>
@@ -627,7 +627,7 @@ const Donation = () => {
                     <CardTitle className="flex items-center">
                       <Package className="mr-2 h-5 w-5" />
                       Donation Guidelines
-                    </CardTitle>
+                    </CardTitle> 
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div>

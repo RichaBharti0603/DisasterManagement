@@ -75,7 +75,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="p-4">
             <Link to="/" className="flex items-center space-x-2" onClick={closeMenu}>
               <AlertTriangle className="h-8 w-8 text-secondary" />
-              <span className="text-xl font-bold">DisasterHaven</span>
+              <span className="text-xl font-bold">NamasteNow</span>
             </Link>
           </div>
 
