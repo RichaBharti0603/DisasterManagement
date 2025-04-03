@@ -187,7 +187,7 @@ const Dashboard = () => {
           <div>
             <h1 className="text-3xl font-bold mb-2">Welcome, {localStorage.getItem('userName') || 'User'}</h1>
             <p className="text-muted-foreground">
-              Your personal disaster preparedness and response dashboard
+              Your personal disaster assistant is here...
             </p>
           </div>
           

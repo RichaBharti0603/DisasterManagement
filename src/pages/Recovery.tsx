@@ -39,7 +39,7 @@ const Recovery = () => {
         link: '#',
         phone: 'Contact state unemployment office',
         deadline: '30 days after announcement',
-        eligibility: 'Workers who lost jobs due to disaster and don't qualify for regular unemployment',
+        eligibility: "Workers who lost jobs due to disaster and don't qualify for regular unemployment",
       },
     ],
     housing: [
@@ -97,7 +97,7 @@ const Recovery = () => {
     },
     {
       question: 'What documents do I need for disaster assistance applications?',
-      answer: 'Typically, you'll need proof of identity (driver's license, passport), proof of occupancy or ownership (deed, mortgage statement, utility bills), insurance information, and documentation of damage (photos, repair estimates). Having these documents ready will help speed up the application process.'
+      answer: "Typically, you'll need proof of identity (driver's license, passport), proof of occupancy or ownership (deed, mortgage statement, utility bills), insurance information, and documentation of damage (photos, repair estimates). Having these documents ready will help speed up the application process."
     },
     {
       question: 'How long does it take to receive disaster assistance?',
@@ -105,15 +105,15 @@ const Recovery = () => {
     },
     {
       question: 'What if my home is uninhabitable due to a disaster?',
-      answer: 'If your home is uninhabitable due to a disaster, you may be eligible for FEMA's Transitional Sheltering Assistance (hotel stays), rental assistance, or temporary housing units. Contact FEMA or visit a local Disaster Recovery Center to discuss your options.'
+      answer: "If your home is uninhabitable due to a disaster, you may be eligible for FEMA's Transitional Sheltering Assistance (hotel stays), rental assistance, or temporary housing units. Contact FEMA or visit a local Disaster Recovery Center to discuss your options."
     },
     {
       question: 'Can I get help replacing lost important documents?',
-      answer: 'Yes, you can get assistance replacing important documents lost in a disaster. Visit a Disaster Recovery Center for help with replacing driver's licenses, Social Security cards, birth certificates, tax records, and other important documents.'
+      answer: "Yes, you can get assistance replacing important documents lost in a disaster. Visit a Disaster Recovery Center for help with replacing driver's licenses, Social Security cards, birth certificates, tax records, and other important documents."
     },
     {
       question: 'How do I handle insurance claims after a disaster?',
-      answer: 'Contact your insurance company as soon as possible. Document all damage with photos and videos before cleaning up. Keep receipts for all repair work and temporary lodging. If you have difficulty with your claim, contact your state's insurance commissioner or seek free legal assistance through Disaster Legal Services.'
+      answer: "Contact your insurance company as soon as possible. Document all damage with photos and videos before cleaning up. Keep receipts for all repair work and temporary lodging. If you have difficulty with your claim, contact your state's insurance commissioner or seek free legal assistance through Disaster Legal Services."  
     },
   ];
 
