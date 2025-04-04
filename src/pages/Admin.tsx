@@ -36,67 +36,67 @@ const Admin = () => {
   const users = [
     {
       id: 1,
-      name: 'John Doe',
-      email: 'john@example.com',
-      role: 'User',
+      name: 'Richa Bharti',
+      email: 'richab820@gmail.com',
+      role: 'Admin',
       status: 'Active',
-      location: 'Lincoln, NE',
+      location: 'Gurgaon, Haryana',
       lastActive: '2023-09-14T10:30:00',
       joinDate: '2023-03-25',
     },
     {
       id: 2,
-      name: 'Jane Smith',
-      email: 'jane@example.com',
-      role: 'Admin',
+      name: 'Mudita Jain',
+      email: 'mudita.jain@gmail.com',
+      role: 'User',
       status: 'Active',
-      location: 'Omaha, NE',
+      location: 'Saket, New Delhi',
       lastActive: '2023-09-15T08:45:00',
       joinDate: '2023-02-12',
     },
     {
       id: 3,
-      name: 'Robert Johnson',
-      email: 'robert@example.com',
+      name: 'Pritidarshini Biswal',
+      email: 'pritidarshini@gmail.com',
       role: 'User',
       status: 'Inactive',
-      location: 'Lincoln, NE',
+      location: 'Ganakpuri, Odisha',
       lastActive: '2023-08-30T14:20:00',
       joinDate: '2023-05-08',
     },
     {
       id: 4,
-      name: 'Sarah Wilson',
-      email: 'sarah@example.com',
+      name: 'Revant Prabhas',
+      email: 'championlunatic@gmail.com',
       role: 'Volunteer',
       status: 'Active',
-      location: 'Grand Island, NE',
+      location: 'Gabalpur, MadhyaPradesh',
       lastActive: '2023-09-15T11:10:00',
       joinDate: '2023-04-17',
     },
     {
       id: 5,
-      name: 'Michael Brown',
-      email: 'michael@example.com',
+      name: 'Shadan Reyaz',
+      email: 'shadan@gmail.com',
       role: 'User',
       status: 'Active',
-      location: 'Lincoln, NE',
+      location: 'New Delhi, New Delhi',
       lastActive: '2023-09-14T16:05:00',
       joinDate: '2023-06-22',
     },
   ];
 
-  // Mock data for alerts
+
   const alerts = [
     {
       id: 1,
       title: 'Hurricane Warning',
       type: 'Weather',
       severity: 'Critical',
-      location: 'Florida Coast',
+      location: 'Delhi',
       status: 'Active',
       created: '2023-09-14T08:30:00',
-      updatedBy: 'Jane Smith',
+      updatedBy: 'Vandana',
       recipients: 1254,
     },
     {
@@ -104,10 +104,10 @@ const Admin = () => {
       title: 'Flash Flood Warning',
       type: 'Weather',
       severity: 'High',
-      location: 'Mississippi River Basin',
+      location: 'Mumbai',
       status: 'Active',
       created: '2023-09-14T14:15:00',
-      updatedBy: 'Jane Smith',
+      updatedBy: 'Jay',
       recipients: 892,
     },
     {
@@ -115,10 +115,10 @@ const Admin = () => {
       title: 'Wildfire Alert',
       type: 'Fire',
       severity: 'High',
-      location: 'Northern California',
+      location: 'Pune',
       status: 'Active',
       created: '2023-09-10T11:20:00',
-      updatedBy: 'Admin System',
+      updatedBy: 'Diksha',
       recipients: 745,
     },
     {
@@ -126,10 +126,10 @@ const Admin = () => {
       title: 'Earthquake Advisory',
       type: 'Geological',
       severity: 'Medium',
-      location: 'Central California',
+      location: 'Ranchi',
       status: 'Inactive',
       created: '2023-09-05T02:45:00',
-      updatedBy: 'Admin System',
+      updatedBy: 'Aahana',
       recipients: 1103,
     },
     {
@@ -137,10 +137,10 @@ const Admin = () => {
       title: 'Tornado Watch',
       type: 'Weather',
       severity: 'Medium',
-      location: 'Oklahoma',
+      location: 'Vellore',
       status: 'Inactive',
       created: '2023-09-01T16:30:00',
-      updatedBy: 'Jane Smith',
+      updatedBy: 'Natasha',
       recipients: 658,
     },
   ];
@@ -150,7 +150,7 @@ const Admin = () => {
     {
       id: 1,
       name: 'Central Community Center',
-      address: '123 Main St, Lincoln, NE 68508',
+      address: 'Sector 46, Gurugram',
       capacity: 200,
       occupancy: 120,
       status: 'Open',
@@ -159,7 +159,7 @@ const Admin = () => {
     {
       id: 2,
       name: 'Eastside High School',
-      address: '456 Oak Ave, Lincoln, NE 68510',
+      address: 'Ayanagaar, Delhi',
       capacity: 350,
       occupancy: 280,
       status: 'Open',
@@ -168,7 +168,7 @@ const Admin = () => {
     {
       id: 3,
       name: 'Westview Medical Shelter',
-      address: '789 Elm St, Lincoln, NE 68512',
+      address: 'Khanpur, Delhi',
       capacity: 120,
       occupancy: 110,
       status: 'Open',
@@ -177,7 +177,7 @@ const Admin = () => {
     {
       id: 4,
       name: 'Northside Church',
-      address: '321 Pine Rd, Lincoln, NE 68521',
+      address: 'Ranchi',
       capacity: 150,
       occupancy: 60,
       status: 'Open',
@@ -408,7 +408,7 @@ const Admin = () => {
                           New alert created: Flash Flood Warning
                         </p>
                         <p className="text-xs text-muted-foreground">
-                          By Jane Smith • {formatDate('2023-09-14T14:15:00')}
+                          By Richa • {formatDate('2023-09-14T14:15:00')}
                         </p>
                       </div>
                     </div>
@@ -431,10 +431,10 @@ const Admin = () => {
                       </div>
                       <div>
                         <p className="text-sm font-medium">
-                          User role changed: Sarah Wilson to Volunteer
+                          User role changed: Arunima to Volunteer
                         </p>
                         <p className="text-xs text-muted-foreground">
-                          By Jane Smith • {formatDate('2023-09-14T10:45:00')}
+                          By Richa • {formatDate('2023-09-14T10:45:00')}
                         </p>
                       </div>
                     </div>

@@ -27,7 +27,7 @@ const Alerts = () => {
       type: 'Hurricane',
       title: 'Hurricane Warning',
       description: 'Hurricane approaching the southern coast. Expected to make landfall in 24 hours.',
-      location: 'Florida Coast',
+      location: 'Ranchi',
       timestamp: '2023-09-15T08:30:00',
       severity: 'critical',
       instructions: 'Evacuate immediately if in evacuation zones. Secure property and prepare emergency supplies.',
@@ -38,7 +38,7 @@ const Alerts = () => {
       type: 'Flood',
       title: 'Flash Flood Warning',
       description: 'Heavy rainfall causing rapid flooding in low-lying areas.',
-      location: 'Mississippi River Basin',
+      location: 'Mumbai Bandra',
       timestamp: '2023-09-14T14:15:00',
       severity: 'high',
       instructions: 'Avoid flooded areas. Do not attempt to cross flowing streams. Move to higher ground.',
@@ -49,7 +49,7 @@ const Alerts = () => {
       type: 'Wildfire',
       title: 'Wildfire Alert',
       description: 'Rapidly spreading wildfire threatening residential areas.',
-      location: 'Northern California',
+      location: 'Ayanagar',
       timestamp: '2023-09-10T11:20:00',
       severity: 'high',
       instructions: 'Be ready to evacuate. Pack essential items and important documents. Follow evacuation routes.',
@@ -60,7 +60,7 @@ const Alerts = () => {
       type: 'Earthquake',
       title: 'Earthquake Advisory',
       description: '5.2 magnitude earthquake detected. Aftershocks possible.',
-      location: 'Central California',
+      location: 'Khanpur',
       timestamp: '2023-09-05T02:45:00',
       severity: 'medium',
       instructions: 'Check for injuries and damage. Be prepared for aftershocks. Stay away from damaged buildings.',
@@ -71,17 +71,15 @@ const Alerts = () => {
       type: 'Tornado',
       title: 'Tornado Watch',
       description: 'Conditions are favorable for tornado development in the next few hours.',
-      location: 'Oklahoma',
+      location: 'Saket',
       timestamp: '2023-09-01T16:30:00',
       severity: 'medium',
       instructions: 'Stay alert for changing weather conditions. Have an emergency plan ready.',
       isActive: false,
     },
   ];
-
   const [activeTab, setActiveTab] = useState('all');
   const [subscribedAlerts, setSubscribedAlerts] = useState<number[]>([1, 2]);
-
   const filteredAlerts = () => {
     switch (activeTab) {
       case 'active':
@@ -92,7 +90,6 @@ const Alerts = () => {
         return alertsData;
     }
   };
-
   const getSeverityClass = (severity: string) => {
     switch (severity) {
       case 'critical':
@@ -107,7 +104,6 @@ const Alerts = () => {
         return 'bg-gray-500 text-white';
     }
   };
-
   const toggleSubscription = (alertId: number) => {
     if (subscribedAlerts.includes(alertId)) {
       setSubscribedAlerts(subscribedAlerts.filter(id => id !== alertId));
@@ -115,12 +111,10 @@ const Alerts = () => {
       setSubscribedAlerts([...subscribedAlerts, alertId]);
     }
   };
-
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleString();
   };
-
   return (
     <Layout>
       <div className="container py-8">
@@ -134,12 +128,10 @@ const Alerts = () => {
               Stay informed about emergencies and critical events in your area
             </p>
           </div>
-          
           <Button className="mt-4 md:mt-0 bg-secondary hover:bg-secondary/90">
             <Bell className="mr-2 h-4 w-4" /> Enable Notifications
           </Button>
         </div>
-
         <Tabs defaultValue="all" value={activeTab} onValueChange={setActiveTab} className="mb-8">
           <TabsList className="grid w-full grid-cols-3 max-w-md">
             <TabsTrigger value="all">All Alerts</TabsTrigger>
@@ -147,7 +139,6 @@ const Alerts = () => {
             <TabsTrigger value="subscribed">Subscribed</TabsTrigger>
           </TabsList>
         </Tabs>
-
         <div className="grid grid-cols-1 gap-6">
           {filteredAlerts().map((alert) => (
             <Card key={alert.id} className={alert.isActive ? 'border-l-4 border-l-emergency' : ''}>
@@ -207,8 +198,5 @@ const Alerts = () => {
     </Layout>
   );
 };
-
-// Missing Bell import
 import { Bell } from 'lucide-react';
-
 export default Alerts;

@@ -23,7 +23,7 @@ const Community = () => {
       id: 1,
       title: 'Flood Relief Volunteers',
       organization: 'Red Cross',
-      location: 'Mississippi River Basin',
+      location: 'Odisha',
       date: '2023-09-25',
       startTime: '09:00 AM',
       endTime: '04:00 PM',
@@ -37,7 +37,7 @@ const Community = () => {
       id: 2,
       title: 'Wildfire Recovery Team',
       organization: 'Community Rebuild',
-      location: 'Northern California',
+      location: 'Delhi',
       date: '2023-10-05',
       startTime: '08:00 AM',
       endTime: '03:00 PM',
@@ -51,7 +51,7 @@ const Community = () => {
       id: 3,
       title: 'Hurricane Evacuation Center Support',
       organization: 'Disaster Relief Network',
-      location: 'Florida Coast',
+      location: 'Saket, Delhi',
       date: '2023-09-18',
       startTime: '10:00 AM',
       endTime: '06:00 PM',
@@ -65,7 +65,7 @@ const Community = () => {
       id: 4,
       title: 'Emergency Supply Distribution',
       organization: 'Local Emergency Management',
-      location: 'Lincoln, NE',
+      location: 'Ayanagar, Delhi',
       date: '2023-09-30',
       startTime: '07:00 AM',
       endTime: '02:00 PM',
@@ -82,7 +82,7 @@ const Community = () => {
     {
       id: 1,
       title: 'Tips for Preparing an Emergency Kit',
-      author: 'Sarah Johnson',
+      author: 'Richa Bharti',
       authorRole: 'Emergency Preparedness Specialist',
       date: '2023-09-10',
       content: 'I wanted to share some essential items that every household should have in their emergency kit. Based on my experience...',
@@ -93,7 +93,7 @@ const Community = () => {
     {
       id: 2,
       title: 'Looking for volunteers for elderly check-ins',
-      author: 'Michael Chen',
+      author: 'Mudita Jain',
       authorRole: 'Community Organizer',
       date: '2023-09-12',
       content: 'We need volunteers to check on elderly residents during the upcoming storm. Please comment if you can help...',
@@ -104,7 +104,7 @@ const Community = () => {
     {
       id: 3,
       title: 'Shelter options for pets during evacuation',
-      author: 'Jessica Martinez',
+      author: 'Pritidarshini Biswal',
       authorRole: 'Animal Rescue Coordinator',
       date: '2023-09-14',
       content: "Many people don't know where they can bring their pets during evacuations. Here's a list of pet-friendly shelters in our area...",
@@ -119,7 +119,7 @@ const Community = () => {
     {
       id: 1,
       title: 'Rebuilding Together: Smithville Recovery',
-      author: 'David Wilson',
+      author: 'Revant Prabhas',
       date: '2023-08-25',
       content: 'After the tornado devastated our town, over 200 volunteers came together to rebuild the community center. This became our central hub for recovery efforts and brought our community closer than ever before.',
       image: 'smithville.jpg',
@@ -299,7 +299,7 @@ const Community = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="name">Full Name</Label>
-                      <Input id="name" placeholder="John Doe" />
+                      <Input id="name" placeholder="Richa" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email">Email</Label>
@@ -309,7 +309,7 @@ const Community = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="phone">Phone Number</Label>
-                      <Input id="phone" placeholder="(123) 456-7890" />
+                      <Input id="phone" placeholder="(91) 9876543210" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="location">Location</Label>

@@ -109,7 +109,7 @@ const Index = () => {
           <div className="relative p-8 md:p-16 text-white">
             <div className="flex items-center mb-6">
               <AlertTriangle className="h-10 w-10 mr-4" />
-              <h1 className="text-3xl md:text-4xl font-bold">DisasterHaven Connect</h1>
+              <h1 className="text-3xl md:text-4xl font-bold">DisasterManagement</h1>
             </div>
             <p className="text-lg md:text-xl mb-6 max-w-2xl">
               Your comprehensive disaster management platform for emergency preparation, 
