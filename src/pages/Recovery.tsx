@@ -93,7 +93,7 @@ const Recovery = () => {
   const faqItems = [
     {
       question: 'How do I apply for FEMA assistance?',
-      answer: 'You can apply for FEMA assistance online at DisasterAssistance.gov, by phone at 1-800-621-3362, or in person at a Disaster Recovery Center. You will need your Social Security number, address of the damaged property, description of the damage, insurance information, phone number, and bank account information for direct deposit.'
+      answer: "You can apply for FEMA assistance online at DisasterAssistance.gov, by phone at 1-800-621-3362, or in person at a Disaster Recovery Center. You will need your Social Security number, address of the damaged property, description of the damage, insurance information, phone number, and bank account information for direct deposit."
     },
     {
       question: 'What documents do I need for disaster assistance applications?',
