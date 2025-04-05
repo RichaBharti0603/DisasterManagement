@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="refresh" content="0;url=/DisasterManagement/">
+  <meta charset="UTF-8" />
   <title>Redirecting...</title>
+  <script>
+    const pathname = window.location.pathname;
+    const redirectPath = "/DisasterManagement" + pathname.replace(/^\/DisasterManagement/, "");
+    window.location.replace(redirectPath);
+  </script>
 </head>
 <body>
-  <p>If you are not redirected, <a href="/DisasterManagement/">click here</a>.</p>
+  <p>Redirecting... If you are not redirected, <a href="/DisasterManagement/">click here</a>.</p>
 </body>
 </html>
