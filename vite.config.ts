@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: "/DisasterManagement/", // ✅ Ensure assets load correctly
+  base: "/DisasterManagement/",
   server: {
     host: "::",
     port: 8080,
@@ -20,5 +20,7 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     outDir: "dist",
+    emptyOutDir: true,
+    target: "esnext",
   },
 }));

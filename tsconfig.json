@@ -5,15 +5,24 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
-    "baseUrl": ".",
+    "target": "ESNext",                     // Target modern JS
+    "module": "ESNext",                     // ES modules for Vite
+    "lib": ["DOM", "ESNext"],               // Use modern DOM & JS APIs
+    "moduleResolution": "Node",
+    "baseUrl": ".",                         // Allow @/ imports
     "paths": {
       "@/*": ["./src/*"]
     },
-    "noImplicitAny": false,
-    "noUnusedParameters": false,
-    "skipLibCheck": true,
     "allowJs": true,
-    "noUnusedLocals": false,
-    "strictNullChecks": false
+    "jsx": "react-jsx",                     // Modern JSX transform
+    "strict": true,                         // Enable all strict checks
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
   }
 }
