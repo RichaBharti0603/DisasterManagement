@@ -1,462 +1,143 @@
-
-import React, { useState } from 'react';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Phone, MessageSquare, Mail, MapPin, Clock, Info, AlertTriangle } from 'lucide-react';
-import { useToast } from '@/components/ui/use-toast';
+import React from 'react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { AlertTriangle, MailQuestion, ShieldQuestion, UserQuestion } from 'lucide-react';
 import Layout from '@/components/Layout';
 
 const Help = () => {
-  const { toast } = useToast();
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [subject, setSubject] = useState('');
-  const [message, setMessage] = useState('');
-  const [urgency, setUrgency] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleContactSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!name || !email || !message) {
-      toast({
-        title: "Error",
-        description: "Please fill in all required fields",
-        variant: "destructive",
-      });
-      return;
-    }
-    
-    setIsSubmitting(true);
-    
-    // Simulate API call
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "We'll get back to you as soon as possible.",
-      });
-      
-      // Reset form
-      setName('');
-      setEmail('');
-      setSubject('');
-      setMessage('');
-      setUrgency('');
-      
-      setIsSubmitting(false);
-    }, 1500);
-  };
-
   // FAQ data
   const faqItems = [
     {
       category: 'general',
+      title: 'General Inquiries',
+      icon: <UserQuestion className="h-5 w-5 mr-2" />,
       questions: [
         {
-          question: 'How do I sign up for emergency alerts?',
-          answer: 'You can sign up for emergency alerts by creating an account and enabling notifications in your profile settings. You can customize the types of alerts you want to receive and your preferred notification methods (email, SMS, push notifications).'
+          question: 'What is DisasterHaven?',
+          answer: 'DisasterHaven is a platform designed to provide real-time alerts, resources, and community support during natural disasters and emergencies. Our goal is to ensure quick response and coordination to help keep communities safe.'
         },
         {
-          question: 'What should I do during an evacuation order?',
-          answer: 'When an evacuation order is issued, you should: 1) Gather your emergency kit and important documents, 2) Secure your home, 3) Follow designated evacuation routes, 4) Check in at evacuation centers if needed, and 5) Stay informed through official channels. Our app provides real-time evacuation routes and shelter locations.'
+          question: 'How do I sign up for alerts?',
+          answer: 'You can sign up for alerts by creating an account on our Signup page. Once registered, you can customize your alert preferences to receive notifications relevant to your location and interests.'
         },
         {
-          question: 'How can I volunteer during a disaster?',
-          answer: 'You can volunteer by visiting the Community & Volunteers section of our app. There, you can register as a volunteer, view current opportunities, and sign up for specific roles based on your skills and availability.'
-        },
+          question: 'Is my data secure?',
+          answer: 'Yes, we take data security seriously. We use industry-standard encryption and security measures to protect your personal information. Please review our Privacy Policy for more details.'
+        }
       ]
     },
     {
-      category: 'shelters',
+      category: 'alerts',
+      title: 'Alerts & Notifications',
+      icon: <AlertTriangle className="h-5 w-5 mr-2" />,
       questions: [
         {
-          question: 'Are pets allowed in emergency shelters?',
-          answer: 'Pet policies vary by shelter. Our Shelter Locator includes information about which shelters accept pets. Look for the "Pets Allowed" indicator when searching for shelters. We recommend having a pet emergency plan in place before disasters occur.'
+          question: 'How do I customize my alert preferences?',
+          answer: 'After logging in, navigate to your profile settings. Here, you can specify the types of alerts you wish to receive, set your location preferences, and manage notification settings.'
         },
         {
-          question: 'What should I bring to an emergency shelter?',
-          answer: 'You should bring: 1) Personal identification, 2) Essential medications and medical supplies, 3) Basic toiletries, 4) Change of clothes, 5) Blankets or sleeping bags, 6) Comfort items for children, 7) Mobile phone and charger, and 8) Small games or books for entertainment. Shelter space is limited, so bring only essential items.'
+          question: 'What types of alerts does DisasterHaven provide?',
+          answer: 'We provide alerts for a variety of natural disasters and emergencies, including hurricanes, floods, wildfires, earthquakes, and more. Our alerts are sourced from reliable public emergency APIs to ensure accuracy.'
         },
         {
-          question: 'How long can I stay at an emergency shelter?',
-          answer: 'Emergency shelters typically provide temporary accommodation during the immediate disaster period. The length of stay varies depending on the disaster severity and your specific situation. Shelter staff work with displaced individuals to find longer-term solutions if needed.'
+          question: 'How quickly will I receive alerts?',
+          answer: 'Our alert system is designed to provide real-time notifications. You should receive alerts as soon as they are issued by official sources, ensuring you have timely information to stay safe.'
+        }
+      ]
+    },
+    {
+      category: 'donation',
+      title: 'Donation & Support',
+      icon: <Heart className="h-5 w-5 mr-2" />,
+      questions: [
+        {
+          question: 'How can I donate to disaster relief efforts?',
+          answer: 'You can donate to disaster relief efforts through our Donation page. We partner with reputable organizations to ensure your contributions reach those in need. We accept various forms of payment for your convenience.'
         },
+        {
+          question: 'Are my donations tax-deductible?',
+          answer: 'Donations made through our platform to registered non-profit organizations are typically tax-deductible. Please check with the specific organization and consult your tax advisor for confirmation.'
+        },
+        {
+          question: 'How does DisasterHaven ensure donations are used effectively?',
+          answer: 'We carefully vet our partner organizations to ensure they have a proven track record of effective disaster relief. We also provide transparency reports to show how donations are being used to support affected communities.'
+        }
       ]
     },
     {
       category: 'recovery',
+      title: 'Recovery Resources',
+      icon: <ShieldQuestion className="h-5 w-5 mr-2" />,
       questions: [
         {
           question: 'How do I apply for disaster assistance?',
           answer: "You can apply for disaster assistance through our Recovery page, which links to various aid programs. You'll need to provide documentation about your identity, residence, and disaster-related damages. Our app provides guidance for each step of the application process."
         },
         {
-          question: 'What documents should I have ready for insurance claims?',
-          answer: 'You should have: 1) Insurance policy information, 2) Photos/videos of damage, 3) Inventory of damaged items, 4) Estimates for repairs, 5) Any temporary housing receipts, and 6) Communication records with insurance companies. Our app allows you to securely store these documents for easy access.'
+          question: 'What resources are available for temporary housing?',
+          answer: 'We provide a list of resources for temporary housing on our Shelters page. These resources include emergency shelters, transitional housing programs, and assistance with finding temporary accommodation.'
         },
         {
-          question: 'How can I find contractors for home repairs after a disaster?',
-          answer: 'Our Recovery section includes verified contractor listings and resources for finding reputable services. Always check credentials, get multiple estimates, and beware of repair scams after disasters. You can also connect with community members for recommendations.'
-        },
+          question: 'How can I get help with mental health support?',
+          answer: 'We offer a directory of mental health resources on our Community page. These resources include counseling services, support groups, and crisis hotlines to help you cope with the emotional impact of disasters.'
+        }
       ]
     },
     {
-      category: 'account',
+      category: 'contact',
+      title: 'Contact & Support',
+      icon: <MailQuestion className="h-5 w-5 mr-2" />,
       questions: [
         {
-          question: 'How do I update my emergency contacts?',
-          answer: 'You can update your emergency contacts by going to your profile page and selecting "Emergency Contacts." There, you can add, edit, or remove contacts. We recommend having at least two emergency contacts who live in different areas.'
+          question: 'How can I contact DisasterHaven support?',
+          answer: 'You can contact our support team through the Contact Us form on our Help page. We aim to respond to all inquiries within 24 hours. You can also reach us via phone during business hours.'
         },
         {
-          question: 'Can I use the app without creating an account?',
-          answer: 'Yes, basic features like viewing alerts and finding shelters are available without an account. However, creating an account allows you to receive personalized alerts, save your emergency plan, store important documents, and access additional features.'
+          question: 'What if I have a suggestion for improving the app?',
+          answer: 'We welcome your suggestions! Please use the Contact Us form on our Help page to submit your ideas. Our team reviews all feedback to improve our platform and better serve our users.'
         },
         {
-          question: 'How do I reset my password?',
-          answer: "To reset your password, click on 'Forgot Password' on the login page. Enter your email address, and we'll send you a link to create a new password. For security reasons, password reset links expire after 24 hours."
-        },
+          question: 'How do I report a bug or technical issue?',
+          answer: 'If you encounter a bug or technical issue, please report it through the Contact Us form on our Help page. Provide as much detail as possible, including the steps to reproduce the issue, so our team can resolve it quickly.'
+        }
       ]
-    },
-  ];
-
-  // Emergency contact centers
-  const emergencyContacts = [
-    {
-      name: 'Emergency Operations Center',
-      phone: '911',
-      hours: '24/7',
-      description: 'For immediate life-threatening emergencies',
-    },
-    {
-      name: 'Disaster Response Hotline',
-      phone: '1-800-555-HELP',
-      hours: '24/7 during active disasters',
-      description: 'Current disaster information and guidance',
-    },
-    {
-      name: 'Recovery Assistance Center',
-      phone: '1-800-555-RECOVER',
-      hours: 'Mon-Fri, 8am-6pm',
-      description: 'Support for disaster recovery and resources',
-    },
-    {
-      name: 'Mental Health Crisis Line',
-      phone: '1-800-555-CRISIS',
-      hours: '24/7',
-      description: 'Emotional support during and after disasters',
-    },
-  ];
-
-  // Support centers
-  const supportCenters = [
-    {
-      name: 'Main Support Center',
-      address: '123 Help St, Lincoln, NE 68508',
-      phone: '(402) 555-1234',
-      hours: 'Mon-Fri: 9am-5pm',
-    },
-    {
-      name: 'Northside Community Hub',
-      address: '456 Support Ave, Lincoln, NE 68521',
-      phone: '(402) 555-5678',
-      hours: 'Mon-Sat: 10am-4pm',
-    },
-    {
-      name: 'Eastside Assistance Center',
-      address: '789 Resource Blvd, Lincoln, NE 68510',
-      phone: '(402) 555-9012',
-      hours: 'Mon-Fri: 8am-7pm, Sat: 9am-3pm',
-    },
+    }
   ];
 
   return (
     <Layout>
       <div className="container py-8">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2 flex items-center">
-            <Phone className="mr-2 h-6 w-6 text-primary" />
-            Contact & Help
-          </h1>
-          <p className="text-muted-foreground max-w-3xl">
-            Get assistance, find answers to common questions, and connect with our support team
-          </p>
-        </div>
+        <h1 className="text-3xl font-bold mb-6">Frequently Asked Questions</h1>
+        <p className="text-muted-foreground mb-8">Find answers to common questions about DisasterHaven and how to use our platform.</p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
-          <Card className="lg:col-span-2">
-            <Tabs defaultValue="contact">
-              <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="contact">Contact Us</TabsTrigger>
-                <TabsTrigger value="faq">FAQs</TabsTrigger>
-              </TabsList>
-              
-              <TabsContent value="contact" className="p-6">
-                <div className="flex flex-col md:flex-row gap-6">
-                  <div className="flex-1">
-                    <h2 className="text-xl font-bold mb-4">Send us a message</h2>
-                    <form onSubmit={handleContactSubmit} className="space-y-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="name">Name *</Label>
-                        <Input
-                          id="name"
-                          placeholder="Your name"
-                          value={name}
-                          onChange={(e) => setName(e.target.value)}
-                          required
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="email">Email *</Label>
-                        <Input
-                          id="email"
-                          type="email"
-                          placeholder="your@email.com"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          required
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="urgency">Urgency</Label>
-                        <Select value={urgency} onValueChange={setUrgency}>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select urgency level" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="low">Low - General question</SelectItem>
-                            <SelectItem value="medium">Medium - Need assistance</SelectItem>
-                            <SelectItem value="high">High - Urgent issue</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="subject">Subject</Label>
-                        <Input
-                          id="subject"
-                          placeholder="What's your message about?"
-                          value={subject}
-                          onChange={(e) => setSubject(e.target.value)}
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="message">Message *</Label>
-                        <Textarea
-                          id="message"
-                          placeholder="How can we help you?"
-                          className="min-h-[150px]"
-                          value={message}
-                          onChange={(e) => setMessage(e.target.value)}
-                          required
-                        />
-                      </div>
-                      <Button 
-                        type="submit" 
-                        className="w-full"
-                        disabled={isSubmitting}
-                      >
-                        {isSubmitting ? "Sending..." : "Send Message"}
-                      </Button>
-                    </form>
-                  </div>
-                  
-                  <div className="flex-1 md:border-l md:pl-6 space-y-8">
-                    <div>
-                      <h2 className="text-xl font-bold mb-4">Emergency Contacts</h2>
-                      <div className="space-y-4">
-                        {emergencyContacts.map((contact, index) => (
-                          <div key={index} className="border rounded-md p-4">
-                            <h3 className="font-medium mb-1">{contact.name}</h3>
-                            <div className="flex items-center text-sm mb-1">
-                              <Phone className="h-4 w-4 mr-1 text-emergency" />
-                              <span className="font-medium">{contact.phone}</span>
-                            </div>
-                            <div className="flex items-center text-sm text-muted-foreground mb-2">
-                              <Clock className="h-4 w-4 mr-1" />
-                              <span>{contact.hours}</span>
-                            </div>
-                            <p className="text-sm">{contact.description}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    <div className="pt-4">
-                      <h2 className="text-xl font-bold mb-4">Email Support</h2>
-                      <div className="space-y-2">
-                        <div className="flex items-center">
-                          <Mail className="h-5 w-5 mr-2 text-primary" />
-                          <a href="mailto:support@disasterhaven.org" className="hover:underline">
-                            support@disasterhaven.org
-                          </a>
-                        </div>
-                        <p className="text-sm text-muted-foreground">
-                          Response time: Within 24-48 hours
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </TabsContent>
-              
-              <TabsContent value="faq">
-                <div className="p-6">
-                  <h2 className="text-xl font-bold mb-4">Frequently Asked Questions</h2>
-                  
-                  <Tabs defaultValue="general">
-                    <TabsList className="mb-4">
-                      <TabsTrigger value="general">General</TabsTrigger>
-                      <TabsTrigger value="shelters">Shelters</TabsTrigger>
-                      <TabsTrigger value="recovery">Recovery</TabsTrigger>
-                      <TabsTrigger value="account">Account</TabsTrigger>
-                    </TabsList>
-                    
-                    {faqItems.map((category) => (
-                      <TabsContent key={category.category} value={category.category}>
-                        <Accordion type="single" collapsible className="w-full">
-                          {category.questions.map((faq, index) => (
-                            <AccordionItem key={index} value={`item-${index}`}>
-                              <AccordionTrigger>{faq.question}</AccordionTrigger>
-                              <AccordionContent>{faq.answer}</AccordionContent>
-                            </AccordionItem>
-                          ))}
-                        </Accordion>
-                      </TabsContent>
-                    ))}
-                  </Tabs>
-                  
-                  <div className="mt-8 p-4 bg-muted rounded-md flex items-start">
-                    <Info className="h-5 w-5 text-info mr-2 flex-shrink-0 mt-0.5" />
-                    <p className="text-sm">
-                      Didn't find what you're looking for? Contact our support team for more assistance.
-                    </p>
-                  </div>
-                </div>
-              </TabsContent>
-            </Tabs>
-          </Card>
-          
-          <Card className="lg:col-span-1">
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <MapPin className="mr-2 h-5 w-5" />
-                Support Centers
-              </CardTitle>
-              <CardDescription>
-                Visit one of our in-person support centers for assistance
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              {supportCenters.map((center, index) => (
-                <div key={index} className="border-b pb-4 last:border-0 last:pb-0">
-                  <h3 className="font-medium mb-2">{center.name}</h3>
-                  <div className="space-y-1 text-sm">
-                    <div className="flex items-start">
-                      <MapPin className="h-4 w-4 mr-2 text-muted-foreground mt-0.5" />
-                      <span>{center.address}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Phone className="h-4 w-4 mr-2 text-muted-foreground" />
-                      <span>{center.phone}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Clock className="h-4 w-4 mr-2 text-muted-foreground" />
-                      <span>{center.hours}</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </CardContent>
-            <CardFooter>
-              <Button variant="outline" className="w-full">
-                <MapPin className="mr-2 h-4 w-4" />
-                View on Map
-              </Button>
-            </CardFooter>
-          </Card>
+        <div className="space-y-6">
+          {faqItems.map((category) => (
+            <Card key={category.category}>
+              <CardHeader className="flex flex-row items-center">
+                {category.icon}
+                <CardTitle>{category.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Accordion type="single" collapsible>
+                  {category.questions.map((item, index) => (
+                    <AccordionItem key={index} value={`item-${category.category}-${index}`}>
+                      <AccordionTrigger className="flex justify-between items-center py-3">
+                        {item.question}
+                      </AccordionTrigger>
+                      <AccordionContent className="py-2">
+                        {item.answer}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </CardContent>
+            </Card>
+          ))}
         </div>
-        
-        <Card className="mb-10">
-          <CardHeader>
-            <CardTitle className="flex items-center">
-              <AlertTriangle className="mr-2 h-5 w-5 text-emergency" />
-              Report an Emergency Situation
-            </CardTitle>
-            <CardDescription>
-              If you need immediate assistance during an emergency, please call 911.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="bg-emergency/10 border border-emergency/20 rounded-md p-4">
-              <h3 className="font-medium mb-2 text-emergency-dark">Emergency Resources:</h3>
-              <ul className="space-y-2 text-sm">
-                <li className="flex items-center">
-                  <Phone className="h-4 w-4 mr-2 text-emergency" />
-                  <span><strong>Emergency Services:</strong> 911</span>
-                </li>
-                <li className="flex items-center">
-                  <Phone className="h-4 w-4 mr-2 text-emergency" />
-                  <span><strong>Disaster Relief Hotline:</strong> 1-800-555-HELP</span>
-                </li>
-                <li className="flex items-center">
-                  <Phone className="h-4 w-4 mr-2 text-emergency" />
-                  <span><strong>Poison Control:</strong> 1-800-222-1222</span>
-                </li>
-                <li className="flex items-center">
-                  <Phone className="h-4 w-4 mr-2 text-emergency" />
-                  <span><strong>Mental Health Crisis Line:</strong> 1-800-555-CRISIS</span>
-                </li>
-              </ul>
-            </div>
-          </CardContent>
-        </Card>
-        
-        <Card>
-          <CardHeader>
-            <CardTitle>Feedback and Suggestions</CardTitle>
-            <CardDescription>
-              Help us improve the DisasterHaven platform
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="feedback-type">Feedback Type</Label>
-                <Select>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select type of feedback" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="suggestion">Suggestion</SelectItem>
-                    <SelectItem value="bug">Bug Report</SelectItem>
-                    <SelectItem value="feature">Feature Request</SelectItem>
-                    <SelectItem value="praise">Praise</SelectItem>
-                    <SelectItem value="other">Other</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="feedback">Your Feedback</Label>
-                <Textarea
-                  id="feedback"
-                  placeholder="Share your thoughts, suggestions, or report issues"
-                  className="min-h-[120px]"
-                />
-              </div>
-              <Button className="w-full">
-                Submit Feedback
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
       </div>
     </Layout>
   );
 };
 
+import { Heart } from 'lucide-react';
 export default Help;

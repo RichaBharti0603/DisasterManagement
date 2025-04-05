@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -104,7 +103,7 @@ const Community = () => {
     {
       id: 3,
       title: 'Shelter options for pets during evacuation',
-      author: 'Pritidarshini Biswal',
+      author: 'Jessica Martinez',
       authorRole: 'Animal Rescue Coordinator',
       date: '2023-09-14',
       content: "Many people don't know where they can bring their pets during evacuations. Here's a list of pet-friendly shelters in our area...",
