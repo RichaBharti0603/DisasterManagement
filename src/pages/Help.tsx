@@ -1,7 +1,8 @@
+
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { AlertTriangle, MailQuestion, ShieldQuestion, UserQuestion } from 'lucide-react';
+import { AlertTriangle, MailQuestion, Shield, HelpCircle } from 'lucide-react';
 import Layout from '@/components/Layout';
 
 const Help = () => {
@@ -10,7 +11,7 @@ const Help = () => {
     {
       category: 'general',
       title: 'General Inquiries',
-      icon: <UserQuestion className="h-5 w-5 mr-2" />,
+      icon: <HelpCircle className="h-5 w-5 mr-2" />,
       questions: [
         {
           question: 'What is DisasterHaven?',
@@ -67,7 +68,7 @@ const Help = () => {
     {
       category: 'recovery',
       title: 'Recovery Resources',
-      icon: <ShieldQuestion className="h-5 w-5 mr-2" />,
+      icon: <Shield className="h-5 w-5 mr-2" />,
       questions: [
         {
           question: 'How do I apply for disaster assistance?',
